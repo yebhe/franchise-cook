@@ -9,7 +9,23 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG')
 
-CORS_ALLOW_ALL_ORIGINS = True
+# 
+ALLOWED_HOSTS = ["yebhecours.alwaysdata.net"]
+
+CSRF_TRUSTED_ORIGINS = ["https://yebhecours.alwaysdata.net"]
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "https://yebhecours.alwaysdata.net",
+]
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_NAME = "csrftoken"
+# 
 
 # ALLOW_HOSTS = ['*']
 # CSRF_TRUSTED_ORIGINS = [
@@ -18,10 +34,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 #     'http://127.0.0.1:3000',
 #     'http://127.0.0.1:8000',
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
-CSRF_TRUSTED_ORIGINS = ['https://yebhecours.alwaysdata.net']
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -155,10 +168,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/") 
 
-CORS_ALLOW_CREDENTIALS = True
-CSRF_COOKIE_HTTPONLY = False 
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_NAME = 'csrftoken'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

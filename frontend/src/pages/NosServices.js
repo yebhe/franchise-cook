@@ -12,7 +12,6 @@ import {
   Target,
   Cog,
   BarChart3,
-  Wrench,
   FileText,
   ShoppingCart,
   Building2

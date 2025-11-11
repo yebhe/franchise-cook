@@ -7,7 +7,6 @@ import {
   Loader,
   RefreshCw,
   AlertTriangle,
-  Mail,
   Phone
 } from 'lucide-react';
 import './ProfileAdmin.css';

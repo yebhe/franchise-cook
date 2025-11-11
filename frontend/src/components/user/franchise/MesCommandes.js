@@ -1,4 +1,3 @@
-// MesCommandes.jsx - VERSION WORKFLOW : Entrepôt → Produits → Panier (sans entrepôt de livraison)
 import React, { useEffect, useState } from "react";
 import {
   ShoppingCart,
@@ -10,7 +9,6 @@ import {
   Eye,
   Clock,
   Package,
-  AlertTriangle,
   Info,
   Calendar,
   TrendingUp,
@@ -20,7 +18,6 @@ import {
   Warehouse,
   X,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import "./MesCommandes.css";
 import useAuthStore from "../../../store/authStore";
 import apiClient from "../../../api/axiosConfig";
@@ -28,13 +25,12 @@ import FranchiseNavigation from "./FranchiseNavigation";
 
 const initialCommandeForm = {
   date_livraison_prevue: "",
-  adresse_livraison: "", // 🎯 ADRESSE DE LIVRAISON UNIQUEMENT
+  adresse_livraison: "", 
   details: [],
 };
 
 const initialDetailForm = {
-  entrepot_actuel: "", // 🎯 NOUVEAU WORKFLOW : D'abord sélectionner l'entrepôt
-  produit: "",
+  entrepot_actuel: "", 
   quantite_commandee: 1,
   prix_unitaire: 0,
 };
@@ -92,15 +88,6 @@ export default function MesCommandes() {
     return entrepot ? entrepot.nom_entrepot : "Entrepôt inconnu";
   };
 
-  const getEntrepotType = (entrepotId) => {
-    const entrepot = entrepots.find((e) => e.id === entrepotId);
-    return entrepot ? entrepot.type_entrepot : "unknown";
-  };
-
-  const getProduitNom = (produitId) => {
-    const produit = produits.find((p) => p.id === produitId);
-    return produit ? produit.nom_produit : "Produit inconnu";
-  };
 
   const getStockDisponible = (produitId, entrepotId) => {
     const stock = stocks.find(

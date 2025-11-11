@@ -7,7 +7,6 @@ import {
   Trash2, 
   Search,
   Filter,
-  Euro,
   Warehouse,
   Info
 } from 'lucide-react';

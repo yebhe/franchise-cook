@@ -7,9 +7,6 @@ import {
   Trash2, 
   Search,
   Filter,
-  Euro,
-  Calendar,
-  Wrench
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import apiClient from '../../../api/axiosConfig';

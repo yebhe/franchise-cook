@@ -10,7 +10,6 @@ import {
   CheckCircle,
   XCircle,
   ShoppingCart,
-  Eye,
   MapPin
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

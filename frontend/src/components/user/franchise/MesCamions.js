@@ -13,7 +13,6 @@ import {
   Gauge,
   X
 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import './MesCamions.css';
 import useAuthStore from '../../../store/authStore';
 import apiClient from '../../../api/axiosConfig';

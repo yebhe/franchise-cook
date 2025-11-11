@@ -13,7 +13,7 @@ import {
   X,
   AlertTriangle,
 } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './MesAffectations.css';
 import useAuthStore from '../../../store/authStore';
 import apiClient from '../../../api/axiosConfig';

@@ -12,7 +12,6 @@ import {
   CreditCard,
   Shield
 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import './MonProfile.css';
 import useAuthStore from '../../../store/authStore';
 import apiClient from '../../../api/axiosConfig';

@@ -12,7 +12,6 @@ import {
   MapPin,
   CheckCircle,
   Truck,
-  ShoppingCart,
   Info
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
