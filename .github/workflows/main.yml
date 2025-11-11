@@ -21,34 +21,42 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            echo "Connexion au serveur AlwaysData..."
-            
+            echo "🔗 Connexion au serveur AlwaysData..."
+
             APP_DIR="$HOME/www/franchise-cook"
             cd $HOME
 
-            # Cloner ou mettre à jour le repo
+            # --- Cloner ou mettre à jour le repo ---
             if [ -d "$APP_DIR/.git" ]; then
+              echo "📦 Mise à jour du dépôt existant..."
               cd $APP_DIR
               git reset --hard
               git pull origin main
             else
+              echo "🆕 Clonage du dépôt..."
               git clone https://github.com/yebhe/franchise-cook.git $APP_DIR
             fi
 
-            # Activer le virtualenv
+            # --- Activer l'environnement virtuel ---
+            echo "🐍 Activation de l'environnement virtuel..."
             source $HOME/env/bin/activate
 
-            # Installer les dépendances Python
+            # --- Installer les dépendances ---
+            echo "📦 Installation des dépendances Python..."
+            pip install --upgrade pip
             pip install -r $APP_DIR/backend/requirements.txt
 
-
-            # Appliquer les migrations Django
+            # --- Appliquer les migrations Django ---
+            echo "🔧 Application des migrations Django..."
+            cd $APP_DIR/backend
             python manage.py migrate --noinput
 
-            # Collectstatic avec build React dans staticfiles
+            # --- Collecte des fichiers statiques ---
+            echo "🎨 Collecte des fichiers statiques..."
             python manage.py collectstatic --noinput
 
-            # Redémarrer le service WSGI pour appliquer les changements
+            # --- Redémarrage de l’application WSGI ---
+            echo "♻️ Redémarrage du service WSGI..."
             touch $APP_DIR/backend/backend/wsgi.py
 
-            echo "✅ Déploiement terminé avec succès"
+            echo "✅ Déploiement terminé avec succès !"
