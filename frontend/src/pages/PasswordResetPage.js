@@ -89,7 +89,7 @@ const PasswordResetPage = () => {
     
     try {
       const csrfToken = document.cookie.match(/csrftoken=([^;]*)/)?.[1];
-      const baseURL = process.env.BASE_DJANGO_URL || 'http://localhost:8000';
+      const baseURL = process.env.REACT_APP_BASE_DJANGO_URL
       const response = await axios.put(`${baseURL}/password/reset/${uidb64}/${token}/`, {
         password: formData.password,
         re_password: formData.re_password

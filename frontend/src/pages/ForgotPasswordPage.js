@@ -58,7 +58,7 @@ const ForgotPasswordPage = () => {
     
     try {
       // Configuration de l'URL de base depuis les variables d'environnement
-      const baseURL = process.env.BASE_DJANGO_URL || 'http://localhost:8000';
+      const baseURL = process.env.REACT_APP_BASE_DJANGO_URL
       
       // Appel API réel avec axios - à votre endpoint Django pour forgot password
       const response = await axios.post(`${baseURL}/user/password/forgot/`, {

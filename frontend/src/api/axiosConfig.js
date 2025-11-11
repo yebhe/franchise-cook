@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Configuration de base
-const API_BASE_URL = process.env.BASE_DJANGO_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.REACT_APP_BASE_DJANGO_URL
 
 // Fonction pour lire le token CSRF depuis les cookies
 const getCSRFToken = () => {
