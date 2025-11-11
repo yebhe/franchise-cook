@@ -26,6 +26,7 @@ jobs:
             APP_DIR="$HOME/www/franchise-cook"
             cd $HOME
 
+            # Cloner ou mettre à jour le repo
             if [ -d "$APP_DIR/.git" ]; then
               cd $APP_DIR
               git reset --hard
@@ -34,11 +35,20 @@ jobs:
               git clone https://github.com/yebhe/franchise-cook.git $APP_DIR
             fi
 
+            # Activer le virtualenv
             source $HOME/env/bin/activate
+
+            # Installer les dépendances Python
             pip install -r $APP_DIR/backend/requirements.txt
 
-            cd $APP_DIR/backend
+
+            # Appliquer les migrations Django
             python manage.py migrate --noinput
+
+            # Collectstatic avec build React dans staticfiles
             python manage.py collectstatic --noinput
+
+            # Redémarrer le service WSGI pour appliquer les changements
+            touch $APP_DIR/backend/backend/wsgi.py
 
             echo "✅ Déploiement terminé avec succès"
