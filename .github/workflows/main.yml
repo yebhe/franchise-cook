@@ -37,17 +37,6 @@ jobs:
               git clone https://github.com/yebhe/franchise-cook.git $APP_DIR
             fi
 
-            # --- Générer le build React ---
-            echo "⚛️ Génération du build frontend..."
-            cd $APP_DIR/frontend
-            npm install
-            npm run build
-
-            # --- Copier le build dans le backend ---
-            echo "📂 Copie du build dans le backend..."
-            rm -rf $APP_DIR/backend/build
-            cp -r $APP_DIR/frontend/build $APP_DIR/backend/build
-
             # --- Activer l'environnement virtuel ---
             echo "🐍 Activation de l'environnement virtuel..."
             source $HOME/env/bin/activate
@@ -63,8 +52,8 @@ jobs:
             python manage.py migrate --noinput
 
             # --- Collecte des fichiers statiques ---
-            echo "🎨 Collecte des fichiers statiques..."
-            python manage.py collectstatic --noinput
+            echo "⚠️ Cette étape est maintenant faite manuellement."
+            # python manage.py collectstatic --noinput
 
             # --- Redémarrage de l’application WSGI ---
             echo "♻️ Redémarrage du service WSGI..."
