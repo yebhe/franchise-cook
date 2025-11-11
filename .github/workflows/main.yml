@@ -23,19 +23,19 @@ jobs:
           script: |
             echo "🔗 Connexion au serveur AlwaysData..."
 
-            APP_DIR="$HOME/www/"
+            APP_DIR="$HOME/www/franchise-cook"
             cd $HOME
 
             # --- Cloner ou mettre à jour le repo ---
-            # if [ -d "$APP_DIR/.git" ]; then
-            #   echo "📦 Mise à jour du dépôt existant..."
-            #   cd $APP_DIR
-            #   git reset --hard
-            #   git pull origin main
-            # else
+            if [ -d "$APP_DIR/.git" ]; then
+              echo "📦 Mise à jour du dépôt existant..."
+              cd $APP_DIR
+              git reset --hard
+              git pull origin main
+            else
               echo "🆕 Clonage du dépôt..."
               git clone https://github.com/yebhe/franchise-cook.git $APP_DIR
-            # fi
+            fi
 
             # --- Activer l'environnement virtuel ---
             echo "🐍 Activation de l'environnement virtuel..."
