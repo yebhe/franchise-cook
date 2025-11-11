@@ -37,25 +37,25 @@ jobs:
               git clone https://github.com/yebhe/franchise-cook.git $APP_DIR
             fi
 
-            # --- Activer l'environnement virtuel ---
-            echo "🐍 Activation de l'environnement virtuel..."
-            source $HOME/env/bin/activate
-
-            # --- Installer les dépendances backend ---
-            echo "📦 Installation des dépendances Python..."
-            pip install --upgrade pip
-            pip install -r $APP_DIR/backend/requirements.txt
-
-            # --- Build du frontend ---
-            echo "⚡ Build du frontend..."
+            # --- Générer le build React ---
+            echo "⚛️ Génération du build frontend..."
             cd $APP_DIR/frontend
             npm install
             npm run build
 
             # --- Copier le build dans le backend ---
-            echo "📂 Copier le build frontend dans backend..."
+            echo "📂 Copie du build dans le backend..."
             rm -rf $APP_DIR/backend/build
             cp -r $APP_DIR/frontend/build $APP_DIR/backend/build
+
+            # --- Activer l'environnement virtuel ---
+            echo "🐍 Activation de l'environnement virtuel..."
+            source $HOME/env/bin/activate
+
+            # --- Installer les dépendances Python ---
+            echo "📦 Installation des dépendances Python..."
+            pip install --upgrade pip
+            pip install -r $APP_DIR/backend/requirements.txt
 
             # --- Appliquer les migrations Django ---
             echo "🔧 Application des migrations Django..."
