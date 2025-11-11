@@ -20,7 +20,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
-CSRF_TRUSTED_ORIGINS = ['https://tonlogin.alwaysdata.net']
+CSRF_TRUSTED_ORIGINS = ['https://yebhecours.alwaysdata.net']
 # Application definition
 
 INSTALLED_APPS = [
