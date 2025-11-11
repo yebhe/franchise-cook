@@ -1,0 +1,44 @@
+name: 🚀 Déploiement automatique sur AlwaysData
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Déployer sur AlwaysData
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Déploiement sur AlwaysData
+        uses: appleboy/ssh-action@master
+        with:
+          host: ssh-${{ secrets.USERNAME }}.alwaysdata.net
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            echo "Connexion au serveur AlwaysData..."
+            
+            APP_DIR="$HOME/www/franchise-cook"
+            cd $HOME
+
+            if [ -d "$APP_DIR/.git" ]; then
+              cd $APP_DIR
+              git reset --hard
+              git pull origin main
+            else
+              git clone https://github.com/yebhe/franchise-cook.git $APP_DIR
+            fi
+
+            source $HOME/env/bin/activate
+            pip install -r $APP_DIR/backend/requirements.txt
+
+            cd $APP_DIR/backend
+            python manage.py migrate --noinput
+            python manage.py collectstatic --noinput
+
+            echo "✅ Déploiement terminé avec succès"
