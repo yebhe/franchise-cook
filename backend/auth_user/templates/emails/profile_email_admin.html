@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mise à Jour de Profil Utilisateur</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .email-container {
+            width: 100%;
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .email-header {
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .email-header h2 {
+            margin: 0;
+        }
+
+        .email-body {
+            padding: 20px;
+        }
+
+        .email-body h3 {
+            color: #333333;
+        }
+
+        .email-body p {
+            color: #666666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h2>Notification : Mise à Jour de Profil</h2>
+        </div>
+        <div class="email-body">
+            <h3>Bonjour,</h3>
+            <p>Un utilisateur a mis à jour ses informations de profil.</p>
+            <p><strong>Prénom :</strong> {{ first_name }}</p>
+            <p><strong>Nom :</strong> {{ last_name }}</p>
+            <p><strong>Email :</strong> {{ email }}</p>
+            <p>Merci de vérifier les informations si nécessaire.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; {{ current_year }} Ecodeli. Tous droits réservés.</p>
+        </div>
+    </div>
+</body>
+</html>

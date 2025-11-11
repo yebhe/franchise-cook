@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activation de Compte</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .email-container {
+            width: 100%;
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .email-header {
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .email-header h2 {
+            margin: 0;
+        }
+
+        .email-body {
+            padding: 20px;
+        }
+
+        .email-body h3 {
+            color: #333333;
+        }
+
+        .email-body p {
+            color: #666666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #888888;
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h2>Créaction de votre compte</h2>
+        </div>
+        <div class="email-body">
+            <h3>Bonjour {{ user.first_name }} {{ user.last_name }},</h3>
+            <p>Votre inscription a été effectuée avec succès.</p>
+            <p>Vous pouvez activer votre compte en cliquant sur le lien suivant :</p>
+            <a href="{{ activation_url }}" class="button">Activer votre compte</a>
+            <p>lien d'activation : {{ activation_url }}</p>
+            <p>Merci de votre patience. Vous serez informé dès que votre compte sera approuvé.</p>
+            <p>Cordialement, Ecodeli.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; {{ current_year }} Votre Entreprise. Tous droits réservés.</p>
+        </div>
+    </div>
+</body>
+</html>
