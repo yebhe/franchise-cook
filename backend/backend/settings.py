@@ -10,12 +10,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 
 
-ALLOWED_HOSTS = ["yebhecours.alwaysdata.net"]
-CORS_ALLOW_ALL_ORIGINS = False
-CSRF_TRUSTED_ORIGINS = ["https://yebhecours.alwaysdata.net"]
-CORS_ALLOWED_ORIGINS = [
-    "https://yebhecours.alwaysdata.net",
-]
+# ALLOWED_HOSTS = ["yebhecours.alwaysdata.net"]
+# CORS_ALLOW_ALL_ORIGINS = False
+# CSRF_TRUSTED_ORIGINS = ["https://yebhecours.alwaysdata.net"]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://yebhecours.alwaysdata.net",
+# ]
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
@@ -25,16 +25,16 @@ CSRF_COOKIE_HTTPONLY = False
 CSRF_COOKIE_NAME = "csrftoken"
 # 
 
-# ALLOW_HOSTS = ['*']
-# CORS_ALLOW_ALL_ORIGINS = True
-# CSRF_TRUSTED_ORIGINS = [
-#     'http://127.0.0.1:8000',
-#     'http://localhost:5173',
-#     'http://localhost:3000',
-#     'http://localhost:8000',
-#     'http://127.0.0.1:3000',
-#     'http://127.0.0.1:5173',
-# ]
+ALLOW_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:5173',
+]
 
 
 INSTALLED_APPS = [
@@ -75,7 +75,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR.joinpath("build")],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,24 +90,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'),
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.getenv('DB_ENGINE'),
+#         'NAME': os.getenv('DB_NAME'),
+#         'USER': os.getenv('DB_USER'),
+#         'PASSWORD': os.getenv('DB_PASSWORD'),
+#         'HOST': os.getenv('DB_HOST'),
+#         'PORT': os.getenv('DB_PORT'),
+#     }
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -160,7 +160,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'build/static'),
+    os.path.join(BASE_DIR, 'build/'),
+    os.path.join(BASE_DIR, 'build/assets'),
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

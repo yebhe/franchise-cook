@@ -18,7 +18,7 @@ urlpatterns = [
     path('user/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('password/reset/<uidb64>/<token>/', UserCustomUpdatePasswordView.as_view(), name='password-reset'), 
     path('user/csrf/', views.get_csrf_token, name='csrf_token'),
-    re_path(r'^.*$', FrontendAppView.as_view()),   
+    # re_path(r'^.*$', FrontendAppView.as_view()),   
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
