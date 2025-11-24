@@ -1,16 +1,6 @@
-/* ===== GESTION EMPLACEMENTS - STYLES GLOBAUX ===== */
-.gestion-emplacements {
-  min-height: 100vh;
-  background-color: #f8fafc;
-  padding: 2rem;
-}
-
 .gestion-emplacements__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex: 1;
+  background-color: #faf8fc;
 }
 
 /* ===== HEADER ===== */
@@ -355,7 +345,6 @@
   font-weight: 500;
 }
 
-/* ===== 🎯 NOUVELLES CLASSES POUR LES FRANCHISES AUTORISÉES ===== */
 .gestion-emplacements__franchises-list {
   display: flex;
   flex-direction: column;
@@ -388,7 +377,6 @@
   font-style: italic;
 }
 
-/* ===== 🎯 SECTION FRANCHISES DANS LE FORMULAIRE ===== */
 .gestion-emplacements__franchises-section {
   border: 1px solid #e5e7eb;
   border-radius: 8px;

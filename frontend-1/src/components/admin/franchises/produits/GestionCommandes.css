@@ -1,0 +1,1690 @@
+/* ===== GESTION COMMANDES - STYLES VERSION FINALE 80/20 ===== */
+.gestion-commandes {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 2rem;
+}
+
+.gestion-commandes__container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===== HEADER ===== */
+.gestion-commandes__header {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+}
+
+.gestion-commandes__header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gestion-commandes__title-section {
+  flex: 1;
+}
+
+.gestion-commandes__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.gestion-commandes__title-icon {
+  color: #fbbf24;
+}
+
+.gestion-commandes__subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 400;
+}
+
+.gestion-commandes__header-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ===== BANNIÈRE INFORMATIVE 80/20 ===== */
+.gestion-commandes__info-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.25rem;
+  color: #92400e;
+  font-weight: 500;
+}
+
+.gestion-commandes__info-banner svg {
+  flex-shrink: 0;
+  color: #f59e0b;
+}
+
+/* ===== BOUTONS ===== */
+.gestion-commandes__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.gestion-commandes__btn--primary {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.gestion-commandes__btn--primary:hover {
+  background-color: #0284c7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+}
+
+.gestion-commandes__btn--secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.gestion-commandes__btn--secondary:hover {
+  background-color: #4b5563;
+}
+
+.gestion-commandes__btn--add {
+  background-color: #059669;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.gestion-commandes__btn--add:hover {
+  background-color: #047857;
+}
+
+.gestion-commandes__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== ALERTES ===== */
+.gestion-commandes__alert {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.gestion-commandes__alert--success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.gestion-commandes__alert--error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ===== FILTRES ET RECHERCHE ===== */
+.gestion-commandes__filters {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gestion-commandes__search {
+  position: relative;
+  flex: 1;
+  min-width: 350px;
+}
+
+.gestion-commandes__search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.gestion-commandes__search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gestion-commandes__search-input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.gestion-commandes__filters-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.gestion-commandes__filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gestion-commandes__filter-icon {
+  color: #6b7280;
+}
+
+.gestion-commandes__filter-select,
+.gestion-commandes__filter-date {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+  min-width: 180px;
+}
+
+.gestion-commandes__filter-select:focus,
+.gestion-commandes__filter-date:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+/* ===== STATISTIQUES RAPIDES ===== */
+.gestion-commandes__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gestion-commandes__stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gestion-commandes__stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gestion-commandes__stat-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.gestion-commandes__stat-icon--total {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+}
+
+.gestion-commandes__stat-icon--conforme {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.gestion-commandes__stat-icon--non-conforme {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.gestion-commandes__stat-icon--attente {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.gestion-commandes__stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.gestion-commandes__stat-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.gestion-commandes__stat-label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ===== CONTENU PRINCIPAL ===== */
+.gestion-commandes__content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gestion-commandes__card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.gestion-commandes__card-header {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.gestion-commandes__card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ===== CHARGEMENT ===== */
+.gestion-commandes__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.gestion-commandes__spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #0ea5e9;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.gestion-commandes__spinner--small {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+  margin: 0;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== TABLEAU ===== */
+.gestion-commandes__table-container {
+  overflow-x: auto;
+}
+
+.gestion-commandes__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gestion-commandes__table th {
+  background: #f9fafb;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.gestion-commandes__table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.gestion-commandes__table-row:hover {
+  background-color: #f9fafb;
+}
+
+.gestion-commandes__empty {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* ===== INFORMATIONS COMMANDE ===== */
+.gestion-commandes__numero {
+  font-weight: 600;
+  color: #111827;
+}
+
+.gestion-commandes__franchise {
+  color: #374151;
+}
+
+.gestion-commandes__date {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.gestion-commandes__montant {
+  text-align: right;
+}
+
+.gestion-commandes__montant strong {
+  color: #0ea5e9;
+  font-size: 1rem;
+}
+
+.gestion-commandes__montant small {
+  display: block;
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  line-height: 1.2;
+}
+
+/* ===== CONFORMITÉ 80/20 ===== */
+.gestion-commandes__conformite {
+  text-align: center;
+}
+
+.gestion-commandes__conformite-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.gestion-commandes__conformite-badge--conforme {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.gestion-commandes__conformite-badge--non-conforme {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fbbf24;
+}
+
+.gestion-commandes__conformite-detail {
+  display: block;
+  font-size: 0.7rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* ===== STATUT ===== */
+.gestion-commandes__statut {
+  text-align: center;
+}
+
+.gestion-commandes__statut-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+/* ===== ACTIONS ===== */
+.gestion-commandes__actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.gestion-commandes__action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gestion-commandes__action-btn--view {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.gestion-commandes__action-btn--view:hover {
+  background-color: #0369a1;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.gestion-commandes__action-btn--edit {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.gestion-commandes__action-btn--edit:hover {
+  background-color: #92400e;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.gestion-commandes__action-btn--validate {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.gestion-commandes__action-btn--validate:hover {
+  background-color: #166534;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.gestion-commandes__action-btn--deliver {
+  background-color: #e0e7ff;
+  color: #4338ca;
+}
+
+.gestion-commandes__action-btn--deliver:hover {
+  background-color: #4338ca;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.gestion-commandes__action-btn--delete {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.gestion-commandes__action-btn--delete:hover {
+  background-color: #dc2626;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* ===== MODAL ===== */
+.gestion-commandes__modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.gestion-commandes__modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.gestion-commandes__modal--large {
+  max-width: 1200px;
+}
+
+.gestion-commandes__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 16px 16px 0 0;
+}
+
+.gestion-commandes__modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.gestion-commandes__modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.gestion-commandes__modal-close:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* ===== FORMULAIRE ===== */
+.gestion-commandes__form {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gestion-commandes__form-section {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #f9fafb;
+}
+
+.gestion-commandes__form-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.gestion-commandes__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gestion-commandes__form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.gestion-commandes__form-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+/* ===== CHAMPS DE FORMULAIRE ===== */
+.gestion-commandes__input,
+.gestion-commandes__select {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.gestion-commandes__input:focus,
+.gestion-commandes__select:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.gestion-commandes__select:disabled {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+  border-color: #d1d5db;
+}
+
+.gestion-commandes__select:disabled:focus {
+  box-shadow: none;
+  border-color: #d1d5db;
+}
+
+/* ===== BANNIÈRE INFORMATIVE DANS FORMULAIRE ===== */
+.gestion-commandes__info-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #1e40af;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.gestion-commandes__info-banner svg {
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+/* ===== MESSAGES INFORMATIFS ET D'AIDE ===== */
+.gestion-commandes__info-text {
+  color: #059669;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.gestion-commandes__warning-text {
+  color: #dc2626;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.gestion-commandes__stock-info {
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.gestion-commandes__help-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #eff6ff;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  color: #1e40af;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/* ===== FORMULAIRE PROGRESSIF ===== */
+.gestion-commandes__form-section {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.gestion-commandes__form-section:has(.gestion-commandes__info-text) {
+  border-color: #059669;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.gestion-commandes__form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+/* ===== ANIMATIONS POUR APPARITION PROGRESSIVE ===== */
+.gestion-commandes__form-row {
+  animation: slideInFromTop 0.3s ease-out;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== ÉTAPES DU FORMULAIRE ===== */
+.gestion-commandes__form-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gestion-commandes__form-group label:has-text("1.") {
+  color: #059669;
+}
+
+.gestion-commandes__form-group label:has-text("2.") {
+  color: #0ea5e9;
+}
+
+.gestion-commandes__form-group label:has-text("3.") {
+  color: #8b5cf6;
+}
+
+/* ===== VALIDATION VISUELLE ===== */
+.gestion-commandes__select:valid:not([value=""]) {
+  border-color: #059669;
+  box-shadow: 0 0 0 1px #059669;
+}
+
+.gestion-commandes__input:valid:not([value=""]) {
+  border-color: #059669;
+  box-shadow: 0 0 0 1px #059669;
+}
+
+/* ===== BOUTON AJOUTER AMÉLIORÉ ===== */
+.gestion-commandes__btn--add:disabled {
+  background-color: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.gestion-commandes__btn--add:disabled:hover {
+  background-color: #d1d5db;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===== PRÉVISUALISATION CONFORMITÉ ===== */
+.gestion-commandes__conformite-preview {
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gestion-commandes__conformite-preview--conforme {
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+}
+
+.gestion-commandes__conformite-preview--non-conforme {
+  background: #fef3c7;
+  border: 1px solid #fbbf24;
+}
+
+.gestion-commandes__conformite-preview-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.gestion-commandes__conformite-preview-icon {
+  font-size: 1.2rem;
+}
+
+.gestion-commandes__conformite-preview-text {
+  font-weight: 600;
+  color: #111827;
+}
+
+.gestion-commandes__conformite-preview-details {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* ===== LISTE DES DÉTAILS ===== */
+.gestion-commandes__details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  background: white;
+}
+
+.gestion-commandes__detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.gestion-commandes__detail-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gestion-commandes__detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.gestion-commandes__detail-info strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.gestion-commandes__detail-entrepot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.gestion-commandes__entrepot-type {
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+}
+
+.gestion-commandes__entrepot-type--drivn {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.gestion-commandes__entrepot-type--libre {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.gestion-commandes__detail-quantities {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.gestion-commandes__detail-quantities strong {
+  color: #0ea5e9;
+  font-weight: 700;
+}
+
+.gestion-commandes__detail-remove {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 6px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-left: 1rem;
+}
+
+.gestion-commandes__detail-remove:hover {
+  background: #dc2626;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ===== ACTIONS FORMULAIRE ===== */
+.gestion-commandes__form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== VUES DE DÉTAILS ===== */
+.gestion-commandes__detail-view {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gestion-commandes__detail-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.gestion-commandes__detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gestion-commandes__detail-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.gestion-commandes__detail-field label {
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gestion-commandes__detail-field span {
+  color: #111827;
+  font-weight: 500;
+}
+
+/* ===== CONFORMITÉ DÉTAILS ===== */
+.gestion-commandes__conformite-detail {
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 2px solid;
+}
+
+.gestion-commandes__conformite-detail--conforme {
+  background: #dcfce7;
+  border-color: #bbf7d0;
+}
+
+.gestion-commandes__conformite-detail--non-conforme {
+  background: #fef3c7;
+  border-color: #fbbf24;
+}
+
+.gestion-commandes__conformite-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+.gestion-commandes__conformite-icon {
+  font-size: 1.5rem;
+}
+
+.gestion-commandes__conformite-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gestion-commandes__conformite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.gestion-commandes__conformite-item span:first-child {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.gestion-commandes__conformite-item strong {
+  color: #111827;
+}
+
+/* ===== LISTE DE PRODUITS DANS DÉTAILS ===== */
+.gestion-commandes__products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.gestion-commandes__product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.gestion-commandes__product-info {
+  flex: 1;
+}
+
+.gestion-commandes__product-name {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.gestion-commandes__product-name strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.gestion-commandes__product-type {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.gestion-commandes__product-type--drivn {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.gestion-commandes__product-type--libre {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.gestion-commandes__product-entrepot {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.gestion-commandes__product-quantities {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.gestion-commandes__product-quantities strong {
+  color: #0ea5e9;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ===== RAPPORT DE CONFORMITÉ ===== */
+.gestion-commandes__rapport {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gestion-commandes__rapport-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gestion-commandes__rapport-stat {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.gestion-commandes__rapport-stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0ea5e9;
+  margin-bottom: 0.5rem;
+}
+
+.gestion-commandes__rapport-stat-label {
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.gestion-commandes__rapport-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gestion-commandes__rapport-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.gestion-commandes__rapport-item {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.gestion-commandes__rapport-item--conforme {
+  background: #dcfce7;
+  border-color: #bbf7d0;
+}
+
+.gestion-commandes__rapport-item--non-conforme {
+  background: #fef3c7;
+  border-color: #fbbf24;
+}
+
+.gestion-commandes__rapport-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gestion-commandes__rapport-item-header strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.gestion-commandes__rapport-item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gestion-commandes__rapport-pourcentage {
+  font-weight: 600;
+  color: #111827;
+}
+
+.gestion-commandes__rapport-message {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.gestion-commandes__rapport-more {
+  text-align: center;
+  padding: 1rem;
+  color: #6b7280;
+  font-style: italic;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px dashed #d1d5db;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .gestion-commandes {
+    padding: 1rem;
+  }
+  
+  .gestion-commandes__header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .gestion-commandes__header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .gestion-commandes__title {
+    font-size: 1.75rem;
+  }
+  
+  .gestion-commandes__stats {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  .gestion-commandes__filter-select,
+  .gestion-commandes__filter-date {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gestion-commandes__filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .gestion-commandes__filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .gestion-commandes__search {
+    min-width: auto;
+  }
+  
+  .gestion-commandes__filter-select,
+  .gestion-commandes__filter-date {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .gestion-commandes__stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .gestion-commandes__form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .gestion-commandes__form-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .gestion-commandes__modal {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+  }
+  
+  .gestion-commandes__detail-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .gestion-commandes__detail-quantities {
+    align-items: flex-start;
+  }
+  
+  .gestion-commandes__detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gestion-commandes__conformite-breakdown {
+    grid-template-columns: 1fr;
+  }
+  
+  .gestion-commandes__rapport-stats {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .gestion-commandes__rapport-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .gestion-commandes__rapport-item-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* Tableau responsive */
+  .gestion-commandes__table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .gestion-commandes__table {
+    min-width: 1200px;
+  }
+  
+  .gestion-commandes__table th,
+  .gestion-commandes__table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .gestion-commandes__montant small {
+    font-size: 0.7rem;
+  }
+  
+  .gestion-commandes__conformite-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .gestion-commandes__conformite-detail {
+    font-size: 0.65rem;
+  }
+  
+  .gestion-commandes__statut-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .gestion-commandes__action-btn {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  
+  .gestion-commandes__action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gestion-commandes {
+    padding: 0.5rem;
+  }
+  
+  .gestion-commandes__header {
+    padding: 1.5rem;
+  }
+  
+  .gestion-commandes__title {
+    font-size: 1.5rem;
+  }
+  
+  .gestion-commandes__subtitle {
+    font-size: 1rem;
+  }
+  
+  .gestion-commandes__modal {
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+  }
+  
+  .gestion-commandes__form {
+    padding: 1rem;
+  }
+  
+  .gestion-commandes__form-section {
+    padding: 1rem;
+  }
+  
+  .gestion-commandes__info-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .gestion-commandes__detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .gestion-commandes__detail-remove {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+  
+  .gestion-commandes__product-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .gestion-commandes__product-quantities {
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .gestion-commandes__conformite-preview-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .gestion-commandes__details-list {
+    max-height: 250px;
+  }
+  
+  .gestion-commandes__products-list {
+    max-height: 300px;
+  }
+  
+  .gestion-commandes__rapport-list {
+    max-height: 300px;
+  }
+  
+  .gestion-commandes__table {
+    min-width: 1000px;
+  }
+}
+
+/* ===== ANIMATIONS ET TRANSITIONS ===== */
+.gestion-commandes__table-row {
+  transition: background-color 0.2s ease;
+}
+
+.gestion-commandes__card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gestion-commandes__detail-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gestion-commandes__detail-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gestion-commandes__product-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gestion-commandes__product-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gestion-commandes__rapport-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gestion-commandes__rapport-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== ÉTATS DE FOCUS AMÉLIORES ===== */
+.gestion-commandes__action-btn:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+.gestion-commandes__btn:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+.gestion-commandes__input:focus,
+.gestion-commandes__select:focus {
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+/* ===== AMÉLIORATIONS POUR L'ACCESSIBILITÉ ===== */
+.gestion-commandes__action-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #1f2937;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 1000;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.25rem;
+  pointer-events: none;
+}
+
+.gestion-commandes__action-btn {
+  position: relative;
+}
+.gestion-commandes__action-btn--prepare {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.gestion-commandes__action-btn--prepare:hover {
+  background-color: #7c3aed;
+}
+/* ===== STYLES POUR LES ÉTATS VIDES ===== */
+.gestion-commandes__empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.gestion-commandes__empty-state-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  color: #d1d5db;
+}
+
+.gestion-commandes__empty-state-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.gestion-commandes__empty-state-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ===== STYLES POUR LES MESSAGES DE VALIDATION ===== */
+.gestion-commandes__validation-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.gestion-commandes__validation-message--success {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.gestion-commandes__validation-message--error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.gestion-commandes__validation-message--warning {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fbbf24;
+}
+
+/* ===== INDICATEURS DE CHARGEMENT SPÉCIAUX ===== */
+.gestion-commandes__skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.gestion-commandes__skeleton-row {
+  height: 3rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.gestion-commandes__skeleton-text {
+  height: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.gestion-commandes__skeleton-text--short {
+  width: 60%;
+}
+
+.gestion-commandes__skeleton-text--medium {
+  width: 80%;
+}
+
+.gestion-commandes__skeleton-text--long {
+  width: 100%;
+}
+
+/* ===== STYLES POUR L'IMPRESSION ===== */
+@media print {
+  .gestion-commandes__modal-overlay,
+  .gestion-commandes__filters,
+  .gestion-commandes__header-actions,
+  .gestion-commandes__actions,
+  .gestion-commandes__action-btn {
+    display: none !important;
+  }
+  
+  .gestion-commandes__modal {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .gestion-commandes__table {
+    font-size: 0.8rem;
+  }
+  
+  .gestion-commandes__conformite-badge,
+  .gestion-commandes__statut-badge {
+    border: 1px solid #000;
+    color: #000 !important;
+    background: white !important;
+  }
+}

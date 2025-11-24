@@ -1,0 +1,956 @@
+/* ===== MES MAINTENANCES - STYLES FRANCHISÉ ===== */
+
+/* Layout global */
+.franchise-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.franchise-main-content {
+  flex: 1;
+  margin-left: 280px;
+  background-color: #f8fafc;
+}
+
+.mes-maintenances {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 2rem;
+}
+
+.mes-maintenances__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===== LOADING ===== */
+.mes-maintenances__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.mes-maintenances__spinner {
+  color: #3b82f6;
+  margin-bottom: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+/* ===== HEADER ===== */
+.mes-maintenances__header {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.mes-maintenances__header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.mes-maintenances__title-section {
+  flex: 1;
+}
+
+.mes-maintenances__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.mes-maintenances__title-icon {
+  color: #93c5fd;
+}
+
+.mes-maintenances__subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 400;
+}
+
+.mes-maintenances__header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* ===== BOUTONS ===== */
+.mes-maintenances__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.mes-maintenances__btn--primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.mes-maintenances__btn--primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.mes-maintenances__btn--secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.mes-maintenances__btn--secondary:hover:not(:disabled) {
+  background-color: #4b5563;
+  transform: translateY(-1px);
+}
+
+.mes-maintenances__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== ICÔNE ROTATIVE ===== */
+.mes-maintenances__icon--spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== ALERTES ===== */
+.mes-maintenances__alert {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  animation: slideInFromTop 0.3s ease-out;
+}
+
+.mes-maintenances__alert--error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== BANNIÈRE D'INFORMATION ===== */
+.mes-maintenances__info-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  color: #1e40af;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.mes-maintenances__info-icon {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+/* ===== STATISTIQUES ===== */
+.mes-maintenances__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mes-maintenances__stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease;
+}
+
+.mes-maintenances__stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.mes-maintenances__stat-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mes-maintenances__stat-icon--total {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.mes-maintenances__stat-icon--en-cours {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.mes-maintenances__stat-icon--programmes {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.mes-maintenances__stat-icon--cout {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.mes-maintenances__stat-content {
+  flex: 1;
+}
+
+.mes-maintenances__stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+}
+
+.mes-maintenances__stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* ===== FILTRES ET RECHERCHE ===== */
+.mes-maintenances__filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.mes-maintenances__search {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+}
+
+.mes-maintenances__search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.mes-maintenances__search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mes-maintenances__search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.mes-maintenances__filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mes-maintenances__filter-icon {
+  color: #6b7280;
+}
+
+.mes-maintenances__filter-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mes-maintenances__filter-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ===== CONTENU PRINCIPAL ===== */
+.mes-maintenances__content {
+  min-height: 400px;
+}
+
+/* ===== ÉTAT VIDE ===== */
+.mes-maintenances__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.mes-maintenances__empty-icon {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+.mes-maintenances__empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.75rem 0;
+}
+
+.mes-maintenances__empty-text {
+  color: #6b7280;
+  margin: 0;
+  max-width: 400px;
+}
+
+/* ===== LISTE DES MAINTENANCES ===== */
+.mes-maintenances__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ===== CARTE MAINTENANCE ===== */
+.mes-maintenances__card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  animation: cardFadeIn 0.3s ease-out;
+}
+
+.mes-maintenances__card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mes-maintenances__card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.mes-maintenances__card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.mes-maintenances__card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.mes-maintenances__card-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.mes-maintenances__card-icon {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.mes-maintenances__card-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.mes-maintenances__card-content {
+  padding: 1.5rem;
+}
+
+.mes-maintenances__description {
+  margin-bottom: 1.5rem;
+}
+
+.mes-maintenances__description-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.mes-maintenances__description-text {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== GRILLE D'INFORMATIONS ===== */
+.mes-maintenances__info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.mes-maintenances__info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #f3f4f6;
+  transition: all 0.2s ease;
+}
+
+.mes-maintenances__info-item:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.mes-maintenances__info-icon {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.mes-maintenances__info-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.mes-maintenances__info-value {
+  font-weight: 600;
+  color: #111827;
+  margin-left: auto;
+}
+
+/* ===== BADGES ===== */
+.mes-maintenances__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+/* Badges de type de maintenance */
+.mes-maintenances__badge--revision {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.mes-maintenances__badge--reparation {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.mes-maintenances__badge--panne {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.mes-maintenances__badge--controle {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+}
+
+/* Badges de statut */
+.mes-maintenances__badge--programme {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.mes-maintenances__badge--en_cours {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.mes-maintenances__badge--termine {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.mes-maintenances__badge--default {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== ACTIONS DES CARTES ===== */
+.mes-maintenances__card-actions {
+  padding: 1rem 1.5rem 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  border-top: 1px solid #f3f4f6;
+}
+
+.mes-maintenances__action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mes-maintenances__action-btn--edit {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.mes-maintenances__action-btn--edit:hover:not(:disabled) {
+  background-color: #2563eb;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.mes-maintenances__action-btn--delete {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.mes-maintenances__action-btn--delete:hover:not(:disabled) {
+  background-color: #dc2626;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.mes-maintenances__action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== MODAL ET FORMULAIRE ===== */
+.mes-maintenances__modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.mes-maintenances__modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.mes-maintenances__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.mes-maintenances__modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.mes-maintenances__modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.mes-maintenances__modal-close:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+  transform: scale(1.1);
+}
+
+/* ===== FORMULAIRE ===== */
+.mes-maintenances__form {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mes-maintenances__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.mes-maintenances__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mes-maintenances__form-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.mes-maintenances__label--error {
+  color: #dc2626;
+}
+
+.mes-maintenances__error-icon {
+  color: #dc2626;
+}
+
+.mes-maintenances__input,
+.mes-maintenances__select,
+.mes-maintenances__textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.mes-maintenances__input:focus,
+.mes-maintenances__select:focus,
+.mes-maintenances__textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.mes-maintenances__input--error,
+.mes-maintenances__select--error,
+.mes-maintenances__textarea--error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.mes-maintenances__textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.mes-maintenances__error-text {
+  font-size: 0.8rem;
+  color: #dc2626;
+  margin-top: 0.25rem;
+}
+
+.mes-maintenances__form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== ALERTES SUCCESS ===== */
+.mes-maintenances__alert--success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+/* ===== RESPONSIVE POUR LE FORMULAIRE ===== */
+@media (max-width: 768px) {
+  .mes-maintenances__form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .mes-maintenances__form-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .mes-maintenances__modal {
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .mes-maintenances__modal {
+    margin: 0.25rem;
+    max-height: calc(100vh - 0.5rem);
+  }
+  
+  .mes-maintenances__modal-header {
+    padding: 1rem;
+  }
+  
+  .mes-maintenances__form {
+    padding: 0.75rem;
+  }
+}
+@media (max-width: 1280px) {
+  .franchise-main-content {
+    margin-left: 0;
+  }
+  
+  .mes-maintenances {
+    padding-top: 5rem; /* Espace pour le bouton menu mobile */
+  }
+}
+
+@media (max-width: 1024px) {
+  .mes-maintenances {
+    padding: 1rem;
+  }
+  
+  .mes-maintenances__header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .mes-maintenances__header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .mes-maintenances__title {
+    font-size: 1.75rem;
+  }
+  
+  .mes-maintenances__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .mes-maintenances__info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mes-maintenances {
+    padding: 0.5rem;
+  }
+  
+  .mes-maintenances__filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .mes-maintenances__search {
+    min-width: auto;
+  }
+  
+  .mes-maintenances__filter {
+    justify-content: space-between;
+  }
+  
+  .mes-maintenances__stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .mes-maintenances__card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .mes-maintenances__card-badges {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mes-maintenances {
+    padding: 0.25rem;
+  }
+  
+  .mes-maintenances__header {
+    padding: 1.5rem;
+  }
+  
+  .mes-maintenances__title {
+    font-size: 1.5rem;
+  }
+  
+  .mes-maintenances__card-header,
+  .mes-maintenances__card-content {
+    padding: 1rem;
+  }
+  
+  .mes-maintenances__stat-card {
+    padding: 1rem;
+  }
+  
+  .mes-maintenances__stat-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .mes-maintenances__stat-value {
+    font-size: 1.25rem;
+  }
+}
+
+/* ===== ACCESSIBILITÉ ===== */
+.mes-maintenances__btn:focus,
+.mes-maintenances__search-input:focus,
+.mes-maintenances__filter-select:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .mes-maintenances__filters,
+  .mes-maintenances__btn {
+    display: none !important;
+  }
+  
+  .mes-maintenances {
+    margin-left: 0;
+    padding: 0;
+  }
+  
+  .mes-maintenances__card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .mes-maintenances__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}

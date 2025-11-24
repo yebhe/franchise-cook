@@ -1,27 +1,6 @@
-/* components/admin/dashboard/AdminDashboard.css */
-
-/* Layout principal */
-.admin-layout {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  background-color: #f9fafb;
-}
-
-.admin-main-content {
-  flex: 1;
-  margin-left: 16rem; /* Largeur de la sidebar */
-  transition: margin-left 0.3s ease-in-out;
-}
-
-.admin-dashboard {
-  padding: 2rem;
-  width: 100%;
-}
-
 .admin-dashboard__container {
-  max-width: 1280px;
-  margin: 0 auto;
+  flex: 1;
+  background: #f8fafc;
 }
 
 /* Header */
@@ -267,10 +246,6 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .admin-main-content {
-    margin-left: 0;
-  }
-  
   .admin-dashboard__content-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -278,9 +253,6 @@
 }
 
 @media (max-width: 768px) {
-  .admin-dashboard {
-    padding: 1rem;
-  }
   
   .admin-dashboard__header {
     margin-bottom: 1.5rem;
@@ -310,9 +282,6 @@
 }
 
 @media (max-width: 480px) {
-  .admin-dashboard {
-    padding: 0.75rem;
-  }
   
   .admin-dashboard__title {
     font-size: 1.25rem;

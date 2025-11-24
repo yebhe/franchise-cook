@@ -1,16 +1,6 @@
-/* ===== GESTION PRODUITS - STYLES VERSION FINALE 80/20 ===== */
-.gestion-produits {
-  min-height: 100vh;
-  background-color: #f8fafc;
-  padding: 2rem;
-}
-
 .gestion-produits__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex: 1;
+  background-color: #faf8fc;
 }
 
 /* ===== HEADER ===== */

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background-color: var(--color-bg);
   padding: 2rem 1rem;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .login-header {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background-color: var(--color-card-bg);
   color: white;
   padding: 2rem;
   text-align: center;
@@ -201,12 +201,12 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: var(--color-link);
   color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  background: var(--color-link-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -287,7 +287,6 @@
   }
 }
 
-/* Focus states pour l'accessibilité */
 .form-input:focus,
 .btn:focus,
 .password-toggle:focus,
@@ -342,7 +341,6 @@
   }
 }
 
-/* Améliorations des transitions */
 .form-input,
 .btn,
 .password-toggle,

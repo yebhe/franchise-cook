@@ -1,29 +1,6 @@
-/* ===== MES EMPLACEMENTS - STYLES FRANCHISÉ (VERSION ADAPTÉE MULTI-EMPLACEMENTS) ===== */
-
-/* Layout global */
-.franchise-layout {
-  display: flex;
-  min-height: 100vh;
-}
-
-.franchise-main-content {
-  flex: 1;
-  margin-left: 280px;
-  background-color: #f8fafc;
-}
-
-.mes-emplacements {
-  min-height: 100vh;
-  background-color: #f8fafc;
-  padding: 2rem;
-}
-
 .mes-emplacements__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex: 1;
+  background-color: #faf8fc;
 }
 
 /* ===== HEADER ===== */
@@ -74,7 +51,6 @@
   align-items: center;
 }
 
-/* ===== 🎯 NOUVEAU : STATS RAPIDES ===== */
 .mes-emplacements__stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -149,7 +125,6 @@
   transform: translateY(-1px);
 }
 
-/* 🎯 NOUVEAU : Bouton outline */
 .mes-emplacements__btn--outline {
   background-color: transparent;
   color: #3b82f6;
@@ -161,7 +136,6 @@
   color: white;
 }
 
-/* 🎯 NOUVEAU : Bouton désactivé */
 .mes-emplacements__btn--disabled {
   background-color: #f3f4f6;
   color: #9ca3af;
@@ -390,7 +364,7 @@
   flex-shrink: 0;
 }
 
-/* ===== 🎯 NOUVEAU : STATUT DE DISPONIBILITÉ ===== */
+
 .mes-emplacements__statut {
   display: flex;
   align-items: center;
@@ -604,14 +578,14 @@
   transform: scale(1.1);
 }
 
-/* ===== 🎯 NOUVEAU : STATUT DANS LA MODAL ===== */
+/* =====STATUT DANS LA MODAL ===== */
 .mes-emplacements__modal-statut {
   margin-bottom: 1.5rem;
   border-radius: 8px;
   overflow: hidden;
 }
 
-/* ===== 🎯 NOUVEAU : WARNING DANS LA MODAL ===== */
+/* =====WARNING DANS LA MODAL ===== */
 .mes-emplacements__modal-warning {
   display: flex;
   align-items: center;
@@ -698,7 +672,7 @@
   }
   
   .mes-emplacements {
-    padding-top: 5rem; /* Espace pour le bouton menu mobile */
+    padding-top: 5rem;
   }
 }
 
@@ -726,7 +700,7 @@
     gap: 1rem;
   }
   
-  /* 🎯 NOUVEAU : Stats responsive */
+  /* Stats responsive */
   .mes-emplacements__stats {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
@@ -801,7 +775,7 @@
     text-align: left;
   }
   
-  /* 🎯 NOUVEAU : Stats mobile */
+  /* Stats mobile */
   .mes-emplacements__stats {
     grid-template-columns: 1fr;
     gap: 0.75rem;

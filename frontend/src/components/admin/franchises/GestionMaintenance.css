@@ -1,8 +1,7 @@
 /* ===== GESTION MAINTENANCE - STYLES GLOBAUX ===== */
 .gestion-maintenance {
-  min-height: 100vh;
-  background-color: #f8fafc;
-  padding: 2rem;
+  flex: 1;
+  background-color: #faf8fc;
 }
 
 .gestion-maintenance__container {

@@ -1,16 +1,6 @@
-/* ===== GESTION CAMIONS - STYLES GLOBAUX ===== */
-.gestion-camions {
-  min-height: 100vh;
-  background-color: #f8fafc;
-  padding: 2rem;
-}
-
 .gestion-camions__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex: 1;
+  background-color: #f8fafc;
 }
 
 /* ===== HEADER ===== */
@@ -499,9 +489,6 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .gestion-camions {
-    padding: 1rem;
-  }
   
   .gestion-camions__header-content {
     flex-direction: column;
@@ -548,9 +535,6 @@
 }
 
 @media (max-width: 480px) {
-  .gestion-camions {
-    padding: 0.5rem;
-  }
   
   .gestion-camions__header {
     padding: 1.5rem;

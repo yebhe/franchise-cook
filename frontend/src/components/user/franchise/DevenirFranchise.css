@@ -3,7 +3,7 @@
 .devenir-franchise {
   min-height: 100vh;
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  padding-top: 0; /* La navigation sera en haut */
+  padding-top: 0; 
 }
 
 .devenir-franchise__container {

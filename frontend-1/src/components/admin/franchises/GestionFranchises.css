@@ -1,0 +1,1065 @@
+/* components/admin/franchises/GestionFranchises.css */
+
+.gestion-franchises {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.gestion-franchises__container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+/* Header */
+.gestion-franchises__header {
+  margin-bottom: 2rem;
+  flex-shrink: 0;
+}
+
+.gestion-franchises__header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.gestion-franchises__title-section {
+  flex: 1;
+}
+
+.gestion-franchises__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.gestion-franchises__title-icon {
+  color: #3b82f6;
+}
+
+.gestion-franchises__subtitle {
+  color: #64748b;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Boutons */
+.gestion-franchises__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.gestion-franchises__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.gestion-franchises__btn--primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.gestion-franchises__btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.gestion-franchises__btn--secondary {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.gestion-franchises__btn--secondary:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.gestion-franchises__btn--outline {
+  background: transparent;
+  color: #475569;
+  border: 1px solid #d1d5db;
+}
+
+.gestion-franchises__btn--outline:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+/* Messages d'alerte */
+.gestion-franchises__alert {
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  border-left: 4px solid;
+  animation: slideIn 0.3s ease-out;
+}
+
+.gestion-franchises__alert--error {
+  background-color: #fef2f2;
+  border-left-color: #ef4444;
+  color: #b91c1c;
+}
+
+.gestion-franchises__alert--success {
+  background-color: #f0fdf4;
+  border-left-color: #22c55e;
+  color: #166534;
+}
+
+/* Filtres et recherche */
+.gestion-franchises__filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.gestion-franchises__search,
+.gestion-franchises__filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gestion-franchises__search {
+  flex: 1;
+  max-width: 400px;
+}
+
+.gestion-franchises__search-icon,
+.gestion-franchises__filter-icon {
+  position: absolute;
+  left: 0.75rem;
+  color: #9ca3af;
+  z-index: 1;
+}
+
+.gestion-franchises__search-input,
+.gestion-franchises__filter-select {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: white;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.gestion-franchises__search-input:focus,
+.gestion-franchises__filter-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.gestion-franchises__filter-select {
+  min-width: 160px;
+}
+
+/* Contenu principal */
+.gestion-franchises__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gestion-franchises__list-section {
+  flex: 1;
+}
+
+/* Card */
+.gestion-franchises__card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gestion-franchises__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  background: #fafbfc;
+}
+
+.gestion-franchises__card-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.gestion-franchises__card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* Tableau */
+.gestion-franchises__table-container {
+  flex: 1;
+  overflow: auto;
+}
+
+.gestion-franchises__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gestion-franchises__table th {
+  background: #f8fafc;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.gestion-franchises__table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+}
+
+.gestion-franchises__table-row {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.gestion-franchises__table-row:hover {
+  background-color: #f8fafc;
+}
+
+/* Google Maps et validation d'adresse */
+.gestion-franchises__maps-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  padding: 0.125rem 0.5rem;
+  background: #4285f4;
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+}
+
+.gestion-franchises__address-input-group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.gestion-franchises__address-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.gestion-franchises__address-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  z-index: 1;
+}
+
+.gestion-franchises__input--with-icon {
+  padding-left: 2.5rem;
+}
+
+.gestion-franchises__input--validated {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.gestion-franchises__address-check {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #10b981;
+  z-index: 1;
+}
+
+.gestion-franchises__btn--small {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Autocomplétion Google Places */
+.pac-container {
+  border-radius: 0.5rem !important;
+  border: 1px solid #d1d5db !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  font-family: inherit !important;
+  z-index: 9999 !important;
+}
+
+.pac-item {
+  padding: 0.75rem !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  cursor: pointer !important;
+}
+
+.pac-item:hover {
+  background-color: #f8fafc !important;
+}
+
+.pac-item-selected {
+  background-color: #eff6ff !important;
+}
+
+.pac-matched {
+  font-weight: 600 !important;
+  color: #3b82f6 !important;
+}
+
+/* États de validation */
+.gestion-franchises__validation-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.gestion-franchises__validation-status--success {
+  color: #059669;
+}
+
+.gestion-franchises__validation-status--error {
+  color: #dc2626;
+}
+
+.gestion-franchises__validation-status--pending {
+  color: #d97706;
+}
+
+/* Numéro de ligne */
+.gestion-franchises__row-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #f3f4f6;
+  color: #6b7280;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Informations dans le tableau */
+.gestion-franchises__franchise-info,
+.gestion-franchises__user-info,
+.gestion-franchises__location {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.gestion-franchises__franchise-id,
+.gestion-franchises__user-email,
+.gestion-franchises__postal {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Badge de statut */
+.gestion-franchises__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.gestion-franchises__badge--actif {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.gestion-franchises__badge--suspendu {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.gestion-franchises__badge--resilie {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Actions */
+.gestion-franchises__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gestion-franchises__action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.gestion-franchises__action-btn--view {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.gestion-franchises__action-btn--view:hover {
+  background: #dbeafe;
+  transform: scale(1.05);
+}
+
+.gestion-franchises__action-btn--edit {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.gestion-franchises__action-btn--edit:hover {
+  background: #dcfce7;
+  transform: scale(1.05);
+}
+
+.gestion-franchises__action-btn--reports {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.gestion-franchises__action-btn--reports:hover {
+  background: #fde68a;
+  transform: scale(1.05);
+}
+
+.gestion-franchises__action-btn--delete {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.gestion-franchises__action-btn--delete:hover {
+  background: #fecaca;
+  transform: scale(1.05);
+}
+
+/* États vides et chargement */
+.gestion-franchises__empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.gestion-franchises__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.gestion-franchises__spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.gestion-franchises__spinner--small {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Modal */
+.gestion-franchises__modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+  backdrop-filter: blur(4px);
+}
+
+.gestion-franchises__modal {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: 1rem;
+  animation: slideInUp 0.3s ease-out;
+}
+
+.gestion-franchises__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.gestion-franchises__modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.gestion-franchises__modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.gestion-franchises__modal-close:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Formulaire */
+.gestion-franchises__form {
+  padding: 1.5rem;
+}
+
+.gestion-franchises__form-group {
+  margin-bottom: 1.5rem;
+}
+
+.gestion-franchises__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.gestion-franchises__form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.gestion-franchises__input,
+.gestion-franchises__select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+  background: white;
+}
+
+.gestion-franchises__input:focus,
+.gestion-franchises__select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.gestion-franchises__input:invalid {
+  border-color: #ef4444;
+}
+
+.gestion-franchises__select {
+  cursor: pointer;
+}
+
+.gestion-franchises__select--disabled {
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.gestion-franchises__field-note {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.gestion-franchises__form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Message d'engagement financier */
+.gestion-franchises__engagement-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.gestion-franchises__engagement-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.gestion-franchises__engagement-text {
+  flex: 1;
+}
+
+.gestion-franchises__engagement-text strong {
+  color: #92400e;
+  font-weight: 600;
+}
+
+.gestion-franchises__engagement-text p {
+  margin: 0.5rem 0 0 0;
+  color: #78350f;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.gestion-franchises__engagement-text p strong {
+  color: #92400e;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gestion-franchises {
+    padding: 1rem;
+  }
+
+  .gestion-franchises__header-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gestion-franchises__title {
+    font-size: 1.5rem;
+  }
+
+  .gestion-franchises__filters {
+    flex-direction: column;
+  }
+
+  .gestion-franchises__search {
+    max-width: none;
+  }
+
+  .gestion-franchises__form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gestion-franchises__modal {
+    margin: 0.5rem;
+    max-height: 95vh;
+  }
+
+  .gestion-franchises__form-actions {
+    flex-direction: column;
+  }
+
+  .gestion-franchises__btn {
+    justify-content: center;
+  }
+
+  /* Tableau responsive */
+  .gestion-franchises__table-container {
+    overflow-x: auto;
+  }
+
+  .gestion-franchises__table {
+    min-width: 700px;
+  }
+
+  .gestion-franchises__actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .gestion-franchises__modal {
+    margin: 0;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .gestion-franchises__card-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+}
+
+/* Scrollbar personnalisée */
+.gestion-franchises__table-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.gestion-franchises__table-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.gestion-franchises__table-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.gestion-franchises__table-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Focus visible pour l'accessibilité */
+.gestion-franchises__btn:focus-visible,
+.gestion-franchises__action-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.gestion-franchises__input:focus-visible,
+.gestion-franchises__select:focus-visible,
+.gestion-franchises__search-input:focus-visible,
+.gestion-franchises__filter-select:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* CSS AJOUTS pour la validation - À ajouter au fichier GestionFranchises.css existant */
+
+/* Nouveaux badges de statut pour le workflow de validation */
+.gestion-franchises__badge--en_attente {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.gestion-franchises__badge--valide {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.gestion-franchises__badge--paye {
+  background-color: #10b981;
+  color: white;
+}
+
+/* Boutons d'action spécialisés pour la validation */
+.gestion-franchises__action-btn--validate {
+  background: #10b981;
+  color: white;
+}
+
+.gestion-franchises__action-btn--validate:hover:not(:disabled) {
+  background: #059669;
+  transform: scale(1.05);
+}
+
+.gestion-franchises__action-btn--payment {
+  background: #3b82f6;
+  color: white;
+}
+
+.gestion-franchises__action-btn--payment:hover:not(:disabled) {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+.gestion-franchises__action-btn--success {
+  background: #10b981;
+  color: white;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.gestion-franchises__action-btn--success:hover:not(:disabled) {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* Animation spinning pour les boutons de chargement */
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+/* Badges de paiement dans le tableau */
+.gestion-franchises__payment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-start;
+}
+
+.gestion-franchises__payment-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.gestion-franchises__payment-badge--success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.gestion-franchises__payment-badge--pending {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.gestion-franchises__payment-badge--error {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.gestion-franchises__payment-badge--waiting {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.gestion-franchises__payment-info small {
+  color: #6b7280;
+  font-size: 0.625rem;
+}
+
+/* Modal de validation spécifique */
+.gestion-franchises__modal--validation {
+  max-width: 600px;
+  width: 90%;
+}
+
+.gestion-franchises__validation-content {
+  padding: 1.5rem;
+}
+
+/* Résumé de la franchise dans le modal */
+.gestion-franchises__franchise-summary {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.gestion-franchises__franchise-summary h4 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.gestion-franchises__franchise-summary p {
+  margin: 0.5rem 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+/* Avertissement de validation */
+.gestion-franchises__validation-warning {
+  display: flex;
+  gap: 1rem;
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.gestion-franchises__validation-warning svg {
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.gestion-franchises__validation-warning strong {
+  color: #92400e;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.gestion-franchises__validation-warning p {
+  color: #92400e;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Textarea pour commentaires */
+.gestion-franchises__textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+.gestion-franchises__textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Amélioration des alerts avec icônes */
+.gestion-franchises__alert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  border-left: 4px solid;
+  animation: slideIn 0.3s ease-out;
+}
+
+.gestion-franchises__alert--error {
+  background-color: #fef2f2;
+  border-left-color: #ef4444;
+  color: #b91c1c;
+}
+
+.gestion-franchises__alert--success {
+  background-color: #f0fdf4;
+  border-left-color: #22c55e;
+  color: #166534;
+}
+
+/* Responsive pour la nouvelle colonne paiement */
+@media (max-width: 768px) {
+  .gestion-franchises__table {
+    min-width: 800px; /* Augmenté pour la colonne paiement */
+  }
+  
+  .gestion-franchises__payment-info {
+    min-width: 100px;
+  }
+  
+  .gestion-franchises__validation-warning {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .gestion-franchises__validation-warning svg {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .gestion-franchises__modal--validation {
+    width: 95%;
+    margin: 0.5rem;
+  }
+  
+  .gestion-franchises__validation-content {
+    padding: 1rem;
+  }
+  
+  .gestion-franchises__franchise-summary {
+    padding: 0.75rem;
+  }
+}

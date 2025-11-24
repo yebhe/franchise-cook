@@ -1,0 +1,835 @@
+/* ===== GESTION EMPLACEMENTS - STYLES GLOBAUX ===== */
+.gestion-emplacements {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 2rem;
+}
+
+.gestion-emplacements__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===== HEADER ===== */
+.gestion-emplacements__header {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.gestion-emplacements__header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gestion-emplacements__title-section {
+  flex: 1;
+}
+
+.gestion-emplacements__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.gestion-emplacements__title-icon {
+  color: #fbbf24;
+}
+
+.gestion-emplacements__subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ===== BOUTONS ===== */
+.gestion-emplacements__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.gestion-emplacements__btn--primary {
+  background-color: #10b981;
+  color: white;
+}
+
+.gestion-emplacements__btn--primary:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.gestion-emplacements__btn--secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.gestion-emplacements__btn--secondary:hover {
+  background-color: #4b5563;
+}
+
+.gestion-emplacements__btn--outline {
+  background-color: transparent;
+  color: #10b981;
+  border: 1px solid #10b981;
+}
+
+.gestion-emplacements__btn--outline:hover {
+  background-color: #10b981;
+  color: white;
+}
+
+.gestion-emplacements__btn--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.gestion-emplacements__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== ALERTES ===== */
+.gestion-emplacements__alert {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.gestion-emplacements__alert--success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.gestion-emplacements__alert--error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ===== FILTRES ET RECHERCHE ===== */
+.gestion-emplacements__filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.gestion-emplacements__search {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+}
+
+.gestion-emplacements__search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.gestion-emplacements__search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gestion-emplacements__search-input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.gestion-emplacements__filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gestion-emplacements__filter-icon {
+  color: #6b7280;
+}
+
+.gestion-emplacements__filter-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+}
+
+.gestion-emplacements__filter-select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* ===== CONTENU PRINCIPAL ===== */
+.gestion-emplacements__content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gestion-emplacements__list-section {
+  flex: 1;
+}
+
+.gestion-emplacements__card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.gestion-emplacements__card-header {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.gestion-emplacements__card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ===== CHARGEMENT ===== */
+.gestion-emplacements__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.gestion-emplacements__spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #10b981;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.gestion-emplacements__spinner--small {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
+  margin: 0;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== TABLEAU ===== */
+.gestion-emplacements__table-container {
+  overflow-x: auto;
+}
+
+.gestion-emplacements__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gestion-emplacements__table th {
+  background: #f9fafb;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.gestion-emplacements__table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.gestion-emplacements__table-row:hover {
+  background-color: #f9fafb;
+}
+
+.gestion-emplacements__empty {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* ===== INFORMATIONS EMPLACEMENT ===== */
+.gestion-emplacements__emplacement-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.gestion-emplacements__emplacement-info strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.gestion-emplacements__emplacement-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.gestion-emplacements__tarif {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #059669;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.gestion-emplacements__tarif-free {
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.gestion-emplacements__horaires {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #374151;
+  font-size: 0.85rem;
+}
+
+.gestion-emplacements__location {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.gestion-emplacements__city {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ===== 🎯 NOUVELLES CLASSES POUR LES FRANCHISES AUTORISÉES ===== */
+.gestion-emplacements__franchises-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 200px;
+}
+
+.gestion-emplacements__franchise-tag {
+  display: inline-block;
+  background-color: #eff6ff;
+  color: #1e40af;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #bfdbfe;
+  text-align: center;
+}
+
+.gestion-emplacements__no-franchise {
+  color: #9ca3af;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.gestion-emplacements__more-franchises {
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ===== 🎯 SECTION FRANCHISES DANS LE FORMULAIRE ===== */
+.gestion-emplacements__franchises-section {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gestion-emplacements__franchises-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f9fafb;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #374151;
+  transition: background-color 0.2s ease;
+  gap: 0.5rem;
+}
+
+.gestion-emplacements__franchises-toggle:hover {
+  background: #f3f4f6;
+}
+
+.gestion-emplacements__franchises-toggle span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.gestion-emplacements__franchises-panel {
+  padding: 1rem;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.gestion-emplacements__no-franchises {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  padding: 2rem;
+}
+
+.gestion-emplacements__franchises-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.gestion-emplacements__franchise-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.gestion-emplacements__franchise-item:hover {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.gestion-emplacements__franchise-checkbox {
+  margin: 0;
+  accent-color: #10b981;
+}
+
+.gestion-emplacements__franchise-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.gestion-emplacements__franchise-city {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* ===== BADGES TYPE ZONE ===== */
+.gestion-emplacements__badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gestion-emplacements__badge--centre_ville {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.gestion-emplacements__badge--zone_commerciale {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.gestion-emplacements__badge--parc {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.gestion-emplacements__badge--entreprise {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.gestion-emplacements__badge--marche {
+  background-color: #fce7f3;
+  color: #be185d;
+}
+
+/* ===== ACTIONS ===== */
+.gestion-emplacements__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gestion-emplacements__action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gestion-emplacements__action-btn--edit {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.gestion-emplacements__action-btn--edit:hover {
+  background-color: #0369a1;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.gestion-emplacements__action-btn--delete {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.gestion-emplacements__action-btn--delete:hover {
+  background-color: #dc2626;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* ===== MODAL ===== */
+.gestion-emplacements__modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.gestion-emplacements__modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.gestion-emplacements__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 16px 16px 0 0;
+}
+
+.gestion-emplacements__modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.gestion-emplacements__modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.gestion-emplacements__modal-close:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* ===== FORMULAIRE ===== */
+.gestion-emplacements__form {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gestion-emplacements__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gestion-emplacements__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.gestion-emplacements__form-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gestion-emplacements__input,
+.gestion-emplacements__select {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.gestion-emplacements__input:focus,
+.gestion-emplacements__select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.gestion-emplacements__input--with-icon,
+.gestion-emplacements__select--with-icon {
+  padding-left: 2.5rem;
+}
+
+.gestion-emplacements__input--validated {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.gestion-emplacements__input-wrapper {
+  position: relative;
+}
+
+.gestion-emplacements__input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.gestion-emplacements__help-text {
+  color: #6b7280;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+/* ===== ADRESSE AVEC GOOGLE MAPS ===== */
+.gestion-emplacements__maps-badge {
+  background: #4285f4;
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gestion-emplacements__address-group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.gestion-emplacements__address-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.gestion-emplacements__address-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.gestion-emplacements__address-check {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #10b981;
+}
+
+/* ===== ACTIONS FORMULAIRE ===== */
+.gestion-emplacements__form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .gestion-emplacements {
+    padding: 1rem;
+  }
+  
+  .gestion-emplacements__header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .gestion-emplacements__title {
+    font-size: 1.75rem;
+  }
+  
+  .gestion-emplacements__franchises-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .gestion-emplacements__filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .gestion-emplacements__search {
+    min-width: auto;
+  }
+  
+  .gestion-emplacements__form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .gestion-emplacements__form-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .gestion-emplacements__address-group {
+    flex-direction: column;
+  }
+  
+  .gestion-emplacements__modal {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+    max-width: 600px;
+  }
+  
+  .gestion-emplacements__franchises-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Tableau responsive */
+  .gestion-emplacements__table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .gestion-emplacements__table {
+    min-width: 900px;
+  }
+  
+  .gestion-emplacements__franchises-list {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gestion-emplacements {
+    padding: 0.5rem;
+  }
+  
+  .gestion-emplacements__header {
+    padding: 1.5rem;
+  }
+  
+  .gestion-emplacements__title {
+    font-size: 1.5rem;
+  }
+  
+  .gestion-emplacements__modal {
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+  }
+  
+  .gestion-emplacements__form {
+    padding: 1rem;
+  }
+  
+  .gestion-emplacements__franchise-item {
+    padding: 0.5rem;
+  }
+}

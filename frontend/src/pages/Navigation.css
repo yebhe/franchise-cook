@@ -1,27 +1,3 @@
-/* ========================================
-   Navigation.css - Styles personnalisés Driv'n Cook
-   ======================================== */
-
-/* Variables CSS pour les couleurs Driv'n Cook */
-:root {
-  --primary-color: #f97316;
-  --primary-dark: #ea580c;
-  --secondary-color: #ef4444;
-  --secondary-dark: #dc2626;
-  --gradient-primary: linear-gradient(135deg, #f97316, #ef4444);
-  --gradient-hover: linear-gradient(135deg, #ea580c, #dc2626);
-  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
-  --shadow-heavy: 0 8px 25px rgba(0, 0, 0, 0.2);
-  --transition: all 0.3s ease;
-  --border-radius: 12px;
-  --glass-bg: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.2);
-}
-
-/* ========================================
-   HEADER STYLES
-   ======================================== */
 
 .drivn-header {
   position: fixed;
@@ -44,9 +20,6 @@
   box-shadow: var(--shadow-light);
 }
 
-/* ========================================
-   LOGO STYLES
-   ======================================== */
 
 .drivn-logo {
   cursor: pointer;
@@ -91,10 +64,6 @@
   margin: 0;
   line-height: 1;
 }
-
-/* ========================================
-   NAVIGATION BUTTONS
-   ======================================== */
 
 .drivn-nav-btn {
   position: relative;
@@ -141,10 +110,6 @@
   border-radius: 50%;
   box-shadow: var(--shadow-light);
 }
-
-/* ========================================
-   AUTH BUTTONS
-   ======================================== */
 
 .drivn-btn {
   padding: 10px 16px;
@@ -200,10 +165,6 @@
   background: rgba(220, 38, 38, 0.05);
   text-decoration: none;
 }
-
-/* ========================================
-   MOBILE MENU
-   ======================================== */
 
 .drivn-mobile-menu {
   background: var(--glass-bg);
@@ -261,9 +222,6 @@
   margin: 16px 0;
 }
 
-/* ========================================
-   STATUS INDICATORS
-   ======================================== */
 
 .drivn-status {
   display: inline-flex;

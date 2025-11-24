@@ -1,29 +1,6 @@
-/* ===== MES AFFECTATIONS - STYLES FRANCHISÉ ===== */
-
-/* Layout global */
-.franchise-layout {
-  display: flex;
-  min-height: 100vh;
-}
-
-.franchise-main-content {
-  flex: 1;
-  margin-left: 280px;
-  background-color: #f8fafc;
-}
-
-.mes-affectations {
-  min-height: 100vh;
-  background-color: #f8fafc;
-  padding: 2rem;
-}
-
 .mes-affectations__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex: 1;
+  background-color: #faf8fc;
 }
 
 /* ===== LOADING ===== */

@@ -1,16 +1,6 @@
-/* ===== GESTION CATEGORIES - STYLES GLOBAUX ===== */
-.gestion-categories {
-  min-height: 100vh;
-  background-color: #f8fafc;
-  padding: 2rem;
-}
-
 .gestion-categories__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex: 1;
+  background-color: #faf8fc;
 }
 
 /* ===== HEADER ===== */

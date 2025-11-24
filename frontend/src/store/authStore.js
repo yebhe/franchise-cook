@@ -6,7 +6,6 @@ import apiClient from "../api/axiosConfig";
 const useAuthStore = create(
   persist(
     (set, get) => ({
-      // État
       user: null,
       tokens: {
         access: null,
@@ -16,11 +15,7 @@ const useAuthStore = create(
       isLoading: false,
       error: null,
 
-      // Actions
 
-      /**
-       * Inscription
-       */
       register: async (userData) => {
         set({ isLoading: true, error: null });
 
@@ -38,9 +33,7 @@ const useAuthStore = create(
         }
       },
 
-      /**
-       * Connexion
-       */
+
       login: async (email, password) => {
         set({ isLoading: true, error: null });
 
@@ -133,9 +126,7 @@ const useAuthStore = create(
         }
       },
 
-      /**
-       * Déconnexion
-       */
+
       logout: async () => {
         set({ isLoading: true });
 
@@ -154,9 +145,7 @@ const useAuthStore = create(
         }
       },
 
-      /**
-       * Profil utilisateur
-       */
+
       fetchUserProfile: async () => {
         set({ isLoading: true, error: null });
 
@@ -179,9 +168,7 @@ const useAuthStore = create(
         }
       },
 
-      /**
-       * Mise à jour profil
-       */
+
       updateUserInfo: async (userData) => {
         set({ isLoading: true, error: null });
 
@@ -207,9 +194,7 @@ const useAuthStore = create(
         }
       },
 
-      /**
-       * Mise à jour mot de passe
-       */
+
       updatePassword: async (passwordData) => {
         set({ isLoading: true, error: null });
 
@@ -230,9 +215,6 @@ const useAuthStore = create(
         }
       },
 
-      /**
-       * Vérifier si l'utilisateur est toujours authentifié
-       */
       checkAuthStatus: async () => {
         const { tokens, isAuthenticated } = get();
 
@@ -245,23 +227,19 @@ const useAuthStore = create(
           return true;
         } catch (error) {
           if (error.response?.status === 401) {
-            // Token expiré, l'intercepteur va tenter un refresh automatiquement
+      
             return false;
           }
           throw error;
         }
       },
 
-      /**
-       * Réinitialiser erreurs
-       */
+    
       clearError: () => {
         set({ error: null });
       },
 
-      /**
-       * Utilitaires
-       */
+
       getUserType: () => {
         const state = get();
         const { user } = state;

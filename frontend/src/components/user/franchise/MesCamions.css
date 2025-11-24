@@ -1,17 +1,6 @@
-/* ===== MES CAMIONS - STYLES FRANCHISÉ ===== */
-.mes-camions {
-  min-height: 100vh;
-  background-color: #f8fafc;
-  padding: 2rem;
-  margin-left: 280px; /* Espace pour la sidebar */
-}
-
 .mes-camions__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex: 1;
+  background-color: #faf8fc;
 }
 
 /* ===== HEADER ===== */
@@ -110,8 +99,12 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ===== ALERTES ===== */
@@ -368,7 +361,7 @@
 }
 
 .mes-camions__info-value--mono {
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
   font-size: 0.9rem;
 }
 
@@ -546,7 +539,7 @@
 }
 
 .mes-camions__detail-value--mono {
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
   font-size: 0.9rem;
 }
 
@@ -554,7 +547,7 @@
 @media (max-width: 1280px) {
   .mes-camions {
     margin-left: 0;
-    padding-top: 5rem; /* Espace pour le bouton menu mobile */
+    padding-top: 5rem; 
   }
 }
 
@@ -562,16 +555,16 @@
   .mes-camions {
     padding: 1rem;
   }
-  
+
   .mes-camions__header-content {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .mes-camions__title {
     font-size: 1.75rem;
   }
-  
+
   .mes-camions__grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
@@ -582,66 +575,66 @@
   .mes-camions {
     padding: 0.5rem;
   }
-  
+
   .mes-camions__filters {
     flex-direction: column;
     align-items: stretch;
     gap: 1rem;
   }
-  
+
   .mes-camions__search {
     min-width: auto;
   }
-  
+
   .mes-camions__filter {
     justify-content: space-between;
   }
-  
+
   .mes-camions__grid {
     grid-template-columns: 1fr;
   }
-  
+
   .mes-camions__card-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
-  
+
   .mes-camions__info-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
   }
-  
+
   .mes-camions__info-value {
     margin-left: 0;
   }
-  
+
   /* Modal responsive */
   .mes-camions__modal {
     margin: 0.5rem;
     max-height: calc(100vh - 1rem);
   }
-  
+
   .mes-camions__detail-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .mes-camions__modal-content {
     padding: 1rem;
   }
-  
+
   .mes-camions__detail-section {
     padding: 1rem;
   }
-  
+
   .mes-camions__detail-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
   }
-  
+
   .mes-camions__detail-value {
     text-align: left;
   }
@@ -651,38 +644,38 @@
   .mes-camions {
     padding: 0.25rem;
   }
-  
+
   .mes-camions__header {
     padding: 1.5rem;
   }
-  
+
   .mes-camions__title {
     font-size: 1.5rem;
   }
-  
+
   .mes-camions__card {
     margin: 0;
   }
-  
+
   .mes-camions__card-header,
   .mes-camions__card-content,
   .mes-camions__card-actions {
     padding: 1rem;
   }
-  
+
   .mes-camions__modal {
     margin: 0.25rem;
     max-height: calc(100vh - 0.5rem);
   }
-  
+
   .mes-camions__modal-header {
     padding: 1rem;
   }
-  
+
   .mes-camions__modal-content {
     padding: 0.75rem;
   }
-  
+
   .mes-camions__detail-section {
     padding: 0.75rem;
   }
@@ -742,17 +735,17 @@
   .mes-camions__btn {
     display: none !important;
   }
-  
+
   .mes-camions {
     margin-left: 0;
     padding: 0;
   }
-  
+
   .mes-camions__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .mes-camions__card {
     break-inside: avoid;
     box-shadow: none;

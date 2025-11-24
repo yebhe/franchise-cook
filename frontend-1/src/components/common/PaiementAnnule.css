@@ -1,0 +1,565 @@
+/* pages/franchise/PaiementAnnule.css */
+
+.paiement-annule {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.paiement-annule::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Container principal */
+.paiement-annule__container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 20px;
+  margin-top: 80px;
+}
+
+/* Card principale */
+.paiement-annule__card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  max-width: 700px;
+  width: 100%;
+  overflow: hidden;
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header d'annulation */
+.paiement-annule__header {
+  background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+  padding: 40px 30px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.paiement-annule__header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.paiement-annule__icon-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.paiement-annule__icon {
+  color: #fbbf24;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  animation: shake 0.6s ease-out 0.2s both;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.paiement-annule__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paiement-annule__subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenu principal */
+.paiement-annule__content {
+  padding: 40px 30px;
+}
+
+.paiement-annule__message {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.paiement-annule__message h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 15px 0;
+}
+
+.paiement-annule__message p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Informations importantes */
+.paiement-annule__info-box {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 1px solid #10b981;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paiement-annule__info-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #065f46;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.paiement-annule__info-item p {
+  font-size: 1rem;
+  color: #047857;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Raisons possibles */
+.paiement-annule__reasons {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-left: 4px solid #3b82f6;
+}
+
+.paiement-annule__reasons h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin: 0 0 15px 0;
+}
+
+.paiement-annule__reasons ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.paiement-annule__reasons li {
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.paiement-annule__reasons li::before {
+  content: '•';
+  color: #3b82f6;
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+}
+
+/* Solutions */
+.paiement-annule__solutions {
+  margin-bottom: 40px;
+}
+
+.paiement-annule__solutions h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 20px 0;
+}
+
+.paiement-annule__solution-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.paiement-annule__solution-card {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa);
+  border: 2px solid #fb923c;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paiement-annule__solution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(251, 146, 60, 0.2);
+}
+
+.paiement-annule__solution-card svg {
+  color: #ea580c;
+  margin-bottom: 15px;
+}
+
+.paiement-annule__solution-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #9a3412;
+  margin: 0 0 10px 0;
+}
+
+.paiement-annule__solution-card p {
+  font-size: 1rem;
+  color: #c2410c;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Contact */
+.paiement-annule__contact {
+  background: #fef3c7;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 40px;
+  border: 1px solid #f59e0b;
+}
+
+.paiement-annule__contact h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #92400e;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.paiement-annule__contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.paiement-annule__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+.paiement-annule__contact-item svg {
+  color: #d97706;
+  flex-shrink: 0;
+}
+
+.paiement-annule__contact-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.paiement-annule__contact-item strong {
+  color: #92400e;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.paiement-annule__contact-item a {
+  color: #d97706;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.paiement-annule__contact-item a:hover {
+  border-bottom-color: #d97706;
+}
+
+/* Actions */
+.paiement-annule__actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 30px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.paiement-annule__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.paiement-annule__btn--primary {
+  background: linear-gradient(135deg, #f97316, #dc2626);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.paiement-annule__btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(249, 115, 22, 0.3);
+}
+
+.paiement-annule__btn--secondary {
+  background: white;
+  color: #f97316;
+  border: 2px solid #f97316;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+.paiement-annule__btn--secondary:hover {
+  background: #f97316;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(249, 115, 22, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .paiement-annule__container {
+    padding: 15px;
+    margin-top: 70px;
+  }
+
+  .paiement-annule__card {
+    border-radius: 20px;
+  }
+
+  .paiement-annule__header {
+    padding: 30px 20px;
+  }
+
+  .paiement-annule__title {
+    font-size: 2rem;
+  }
+
+  .paiement-annule__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .paiement-annule__content {
+    padding: 30px 20px;
+  }
+
+  .paiement-annule__message h2 {
+    font-size: 1.5rem;
+  }
+
+  .paiement-annule__info-box {
+    padding: 25px 20px;
+  }
+
+  .paiement-annule__reasons {
+    padding: 20px;
+  }
+
+  .paiement-annule__solution-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .paiement-annule__solution-card {
+    padding: 20px;
+  }
+
+  .paiement-annule__contact {
+    padding: 20px;
+  }
+
+  .paiement-annule__contact-options {
+    gap: 12px;
+  }
+
+  .paiement-annule__contact-item {
+    padding: 12px;
+  }
+
+  .paiement-annule__actions {
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .paiement-annule__btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .paiement-annule__header {
+    padding: 25px 15px;
+  }
+
+  .paiement-annule__title {
+    font-size: 1.8rem;
+  }
+
+  .paiement-annule__content {
+    padding: 25px 15px;
+  }
+
+  .paiement-annule__info-box {
+    padding: 20px 15px;
+    gap: 15px;
+  }
+
+  .paiement-annule__reasons {
+    padding: 18px 15px;
+  }
+
+  .paiement-annule__reasons ul {
+    padding-left: 15px;
+  }
+
+  .paiement-annule__solution-card {
+    padding: 18px 15px;
+  }
+
+  .paiement-annule__contact {
+    padding: 18px 15px;
+  }
+
+  .paiement-annule__contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 15px 10px;
+  }
+
+  .paiement-annule__actions {
+    padding: 15px;
+  }
+}
+
+/* Animation d'entrée pour les éléments */
+.paiement-annule__info-box,
+.paiement-annule__reasons,
+.paiement-annule__solutions,
+.paiement-annule__contact {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.paiement-annule__info-box {
+  animation-delay: 0.2s;
+}
+
+.paiement-annule__reasons {
+  animation-delay: 0.3s;
+}
+
+.paiement-annule__solutions {
+  animation-delay: 0.4s;
+}
+
+.paiement-annule__contact {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* États de focus pour l'accessibilité */
+.paiement-annule__btn:focus,
+.paiement-annule__contact-item a:focus {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Animation réduite pour les utilisateurs qui le préfèrent */
+@media (prefers-reduced-motion: reduce) {
+  .paiement-annule__icon,
+  .paiement-annule__card,
+  .paiement-annule__info-box,
+  .paiement-annule__reasons,
+  .paiement-annule__solutions,
+  .paiement-annule__contact {
+    animation: none;
+  }
+
+  .paiement-annule__btn:hover,
+  .paiement-annule__btn--secondary:hover,
+  .paiement-annule__solution-card:hover {
+    transform: none;
+  }
+}
+
+/* Amélioration de l'accessibilité */
+.paiement-annule__reasons li:last-child {
+  margin-bottom: 0;
+}
+
+.paiement-annule__solution-card:focus-within {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Style pour les liens de contact qui s'ouvrent dans une nouvelle fenêtre */
+.paiement-annule__contact-item a[href^="tel:"]:before,
+.paiement-annule__contact-item a[href^="mailto:"]:before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+}

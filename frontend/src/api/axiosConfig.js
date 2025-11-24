@@ -1,138 +1,105 @@
 import axios from 'axios';
 
-// Configuration de base
-const API_BASE_URL = process.env.REACT_APP_BASE_DJANGO_URL
+const API_BASE_URL = import.meta.env.REACT_APP_BASE_DJANGO_URL || 'http://127.0.0.1:8000';
+console.log('depuis axios conf base url', API_BASE_URL)
 
-// Fonction pour lire le token CSRF depuis les cookies
+// Récupération du token CSRF depuis les cookies
 const getCSRFToken = () => {
-  const match = document.cookie.match(/(?:^|; )csrftoken=([^;]*)/);
+  const match = document.cookie.match(/(?:^|; )csrftoken=([^|;]*)/);
   return match ? match[1] : null;
 };
 
-// Fonction pour récupérer le token CSRF depuis le serveur
+// Récupération d'un nouveau token CSRF
 const fetchCSRFToken = async () => {
   try {
-    await axios.get(`${API_BASE_URL}/user/csrf/`, {
-      withCredentials: true,
-    });
+    await axios.get(`${API_BASE_URL}/user/csrf/`, { withCredentials: true });
     return getCSRFToken();
   } catch (error) {
-    console.error('Erreur récupération CSRF token:', error);
+    console.error('Erreur CSRF:', error);
     return null;
   }
 };
 
-// Création de l'instance Axios
+// Récupération des tokens d'authentification
+const getAuthTokens = () => {
+  try {
+    const stored = localStorage.getItem('auth-storage');
+    return stored ? JSON.parse(stored)?.state?.tokens : null;
+  } catch (error) {
+    console.error('Erreur auth storage:', error);
+    return null;
+  }
+};
+
+// Instance Axios configurée
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  headers: { 'Content-Type': 'application/json' },
   timeout: 10000,
   withCredentials: true,
 });
 
-// 🔐 Fonction pour lire les tokens depuis le localStorage
-const getAuthStorage = () => {
-  try {
-    const stored = localStorage.getItem('auth-storage');
-    return stored ? JSON.parse(stored) : null;
-  } catch (error) {
-    console.error('Erreur récupération auth-storage:', error);
-    return null;
-  }
-};
-
-// 🔑 Intercepteur pour ajouter les tokens dans chaque requête sortante
+// Intercepteur de requêtes
 apiClient.interceptors.request.use(async (config) => {
-  // Ajouter le token CSRF automatiquement pour toutes les requêtes POST/PUT/PATCH/DELETE
-  if (['post', 'put', 'patch', 'delete'].includes(config.method.toLowerCase())) {
+  // Ajout du CSRF token pour les méthodes modifiantes
+  if (['post', 'put', 'patch', 'delete'].includes(config.method?.toLowerCase())) {
     let csrfToken = getCSRFToken();
-    if (!csrfToken) {
-      csrfToken = await fetchCSRFToken();
-    }
-    if (csrfToken) {
-      config.headers['X-CSRFToken'] = csrfToken;
-    }
+    if (!csrfToken) csrfToken = await fetchCSRFToken();
+    if (csrfToken) config.headers['X-CSRFToken'] = csrfToken;
   }
 
-  // Ajouter le token d'authentification
-  const parsed = getAuthStorage();
-  const accessToken = parsed?.state?.tokens?.access;
-  if (accessToken) {
-    config.headers.Authorization = `Bearer ${accessToken}`;
+  // Ajout du token d'authentification
+  const tokens = getAuthTokens();
+  if (tokens?.access) {
+    config.headers.Authorization = `Bearer ${tokens.access}`;
   }
   
   return config;
 });
 
-// 🔁 Intercepteur pour gérer le rafraîchissement automatique du token
+// Intercepteur de réponses
 apiClient.interceptors.response.use(
-  (response) => response, // réponse OK
+  (response) => response,
   async (error) => {
     const originalRequest = error.config;
-    
-    // Gestion des erreurs CSRF (403)
+
+    // Gestion CSRF
     if (error.response?.status === 403 && error.response?.data?.detail?.includes('CSRF')) {
-      console.warn('CSRF token expiré, récupération d\'un nouveau token...');
       const newCsrfToken = await fetchCSRFToken();
       if (newCsrfToken) {
         originalRequest.headers['X-CSRFToken'] = newCsrfToken;
         return apiClient(originalRequest);
       }
     }
-    
-    // Si le token a expiré (401) et qu'on n'a pas déjà tenté un refresh
+
+    // Refresh token sur erreur 401
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
       
       try {
-        const parsed = getAuthStorage();
-        const refreshToken = parsed?.state?.tokens?.refresh;
-        
-        if (!refreshToken) {
-          console.warn('Aucun refresh token disponible');
-          // Rediriger vers la page de connexion ou déclencher logout
-          window.location.href = '/login';
-          return Promise.reject(error);
-        }
-        
-        // Appel à l'API pour rafraîchir le token
+        const tokens = getAuthTokens();
         const response = await axios.post(`${API_BASE_URL}/user/token/refresh/`, {
-          refresh: refreshToken,
-        }, {
-          withCredentials: true,
-          headers: {
-            'X-CSRFToken': getCSRFToken(),
-          }
-        });
+          refresh: tokens?.refresh,
+        }, { withCredentials: true });
+
+        const { access, refresh } = response.data;
         
-        const { access: newAccessToken, refresh: newRefreshToken } = response.data;
-        
-        // Mise à jour du localStorage
-        parsed.state.tokens.access = newAccessToken;
-        if (newRefreshToken) {
-          parsed.state.tokens.refresh = newRefreshToken;
-        }
-        localStorage.setItem('auth-storage', JSON.stringify(parsed));
-        
-        // Mise à jour de l'en-tête Authorization
-        originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
-        
-        // Rejoue la requête originale
+        // Mise à jour du storage
+        const stored = JSON.parse(localStorage.getItem('auth-storage') || '{}');
+        stored.state.tokens = { ...stored.state.tokens, access, refresh };
+        localStorage.setItem('auth-storage', JSON.stringify(stored));
+
+        // Nouvelle tentative
+        originalRequest.headers.Authorization = `Bearer ${access}`;
         return apiClient(originalRequest);
         
       } catch (refreshError) {
-        console.error('Échec du refresh token:', refreshError);
-        
-        // Nettoyer le localStorage et rediriger vers login
         localStorage.removeItem('auth-storage');
         window.location.href = '/login';
-        
         return Promise.reject(refreshError);
       }
     }
-    
+
     return Promise.reject(error);
   }
 );

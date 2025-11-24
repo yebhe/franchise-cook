@@ -9,18 +9,16 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG')
 
-# 
+
 ALLOWED_HOSTS = ["yebhecours.alwaysdata.net"]
-
-CSRF_TRUSTED_ORIGINS = ["https://yebhecours.alwaysdata.net"]
-
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-
 CORS_ALLOW_ALL_ORIGINS = False
+CSRF_TRUSTED_ORIGINS = ["https://yebhecours.alwaysdata.net"]
 CORS_ALLOWED_ORIGINS = [
     "https://yebhecours.alwaysdata.net",
 ]
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_COOKIE_HTTPONLY = False
@@ -28,12 +26,15 @@ CSRF_COOKIE_NAME = "csrftoken"
 # 
 
 # ALLOW_HOSTS = ['*']
+# CORS_ALLOW_ALL_ORIGINS = True
 # CSRF_TRUSTED_ORIGINS = [
+#     'http://127.0.0.1:8000',
+#     'http://localhost:5173',
 #     'http://localhost:3000',
 #     'http://localhost:8000',
 #     'http://127.0.0.1:3000',
-#     'http://127.0.0.1:8000',
-
+#     'http://127.0.0.1:5173',
+# ]
 
 
 INSTALLED_APPS = [
@@ -153,8 +154,6 @@ EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
 
@@ -168,9 +167,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/") 
 
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\
     

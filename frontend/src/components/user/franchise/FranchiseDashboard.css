@@ -1,29 +1,6 @@
-/* ===== DASHBOARD FRANCHISE - STYLES COMPLETS ===== */
-
-/* Layout global */
-.franchise-layout {
-  display: flex;
-  min-height: 100vh;
-}
-
-.franchise-main-content {
-  flex: 1;
-  margin-left: 280px;
-  background-color: #f8fafc;
-}
-
-.dashboard-franchise {
-  min-height: 100vh;
-  background-color: #f8fafc;
-  padding: 2rem;
-}
-
 .dashboard-franchise__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex: 1;
+  background-color: #faf8fc;
 }
 
 /* ===== HEADER ===== */
@@ -676,7 +653,6 @@
   outline-offset: 2px;
 }
 
-/* Réduction des animations pour les utilisateurs qui les préfèrent */
 @media (prefers-reduced-motion: reduce) {
   .dashboard-franchise__kpi-card,
   .dashboard-franchise__section,
